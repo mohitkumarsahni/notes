@@ -1,2 +1,5 @@
-# notes
-Learning Notes
+# My Notes
+
+---
+
+Notes of day to day learning.
