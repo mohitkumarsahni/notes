@@ -24,6 +24,39 @@ A few important reasons:
 - [Reddit](https://www.reddit.com/r/java/comments/tplco2/how_is_java_platform_independent/)
 
 ### What is bytecode?
+
+---
+
+### References:
+- [Scaler Topics - What is Bytecode in Java?](https://www.scaler.com/topics/what-is-byte-code-in-java/)
+- [Quora - What are the differences between bytecode and machine code? Is bytecode specific to Java only?](https://www.quora.com/What-are-the-differences-between-bytecode-and-machine-code-Is-bytecode-specific-to-Java-only)
+- [StackOverflow - What is the difference between assembly code and bytecode?](https://stackoverflow.com/questions/1782415/what-is-the-difference-between-assembly-code-and-bytecode)
+
 ### Compare JDK vs JVM vs JRE
+
+---
+
+### References:
+- [StackOverflow - What is the difference between JDK and JRE?](https://stackoverflow.com/questions/1906445/what-is-the-difference-between-jdk-and-jre)
+- [PW - Differences Between JDK, JRE, and JVM](https://www.pw.live/exams/gate/difference-between-jdk-jre-and-jvm/)
+- [Oracle - Docs](https://docs.oracle.com/cd/E19455-01/806-3461/6jck06gqd/index.html)
+- [Reddit - Difference Between JDK, JRE, and JVM](https://www.reddit.com/user/HDGTurkey/comments/12qk982/difference_between_jdk_jre_and_jvm/)
+
 ### What are the important differences between C++ and Java?
+
+---
+
+### References:
+- [StackOverflow - What is the difference between Java and C++?](https://stackoverflow.com/questions/387256/what-is-the-difference-between-java-and-c)
+
 ### What is the role for a classloader in Java?
+
+---
+
+### References:
+- [WikiPedia - Java Classloader](https://en.wikipedia.org/wiki/Java_Classloader)
+- [Oracle - Docs](https://docs.oracle.com/javase%2F8%2Fdocs%2Fapi%2F%2F/java/lang/ClassLoader.html)
+- [Digital Ocean - Java Classloader](https://www.digitalocean.com/community/tutorials/java-classloader)
+- [StackOverflow - What is the purpose of the Java Class loader?](https://stackoverflow.com/questions/6519003/what-is-the-purpose-of-the-java-class-loader)
+- [Medium - ClassLoader In Java Explained along with commonly associated errors](https://medium.com/@salvipriya97/classloader-in-java-explained-along-with-commonly-associated-errors-1538ff38254d)
+- [Baeldung - Class Loaders in Java](https://www.baeldung.com/java-classloaders#:~:text=Class%20loaders%20are%20responsible%20for,programs%20thanks%20to%20class%20loaders.)
