@@ -1,0 +1,94 @@
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bs-tertiary-bg);
+}
+
+.sidebar {
+  background: var(--bs-body-bg);
+}
+
+.sidebar .offcanvas-body {
+  overflow-y: auto;
+}
+
+.module-title {
+  margin: 1.5rem 0 0.35rem;
+  color: var(--bs-secondary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-title:first-child {
+  margin-top: 0;
+}
+
+.sidebar .nav-link {
+  margin-bottom: 0.15rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--bs-border-radius);
+  color: var(--bs-body-color);
+}
+
+.sidebar .nav-link:hover {
+  background: var(--bs-tertiary-bg);
+}
+
+.sidebar .nav-link.active {
+  background: var(--bs-primary-bg-subtle);
+  color: var(--bs-primary-text-emphasis);
+  font-weight: 600;
+}
+
+.content-container {
+  width: 100%;
+}
+
+#note-content {
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg);
+  background: var(--bs-body-bg);
+}
+
+#note-content h1 {
+  margin-bottom: 1.5rem;
+}
+
+#note-content h2 {
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--bs-border-color);
+  font-size: 1.5rem;
+}
+
+#note-content h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+#note-content pre {
+  padding: 1rem;
+  border-radius: var(--bs-border-radius);
+  background: var(--bs-dark);
+  color: var(--bs-light);
+  overflow-x: auto;
+}
+
+#note-content code:not(pre code) {
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--bs-border-radius-sm);
+  background: var(--bs-tertiary-bg);
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+  }
+}

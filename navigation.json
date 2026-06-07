@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Start Here",
+    "pages": [
+      {
+        "id": "home",
+        "title": "Home",
+        "file": "notes/home.html"
+      },
+      {
+        "id": "writing-notes",
+        "title": "Writing Notes",
+        "file": "notes/writing-notes.html"
+      }
+    ]
+  },
+  {
+    "title": "Java",
+    "pages": [
+      {
+        "id": "java/overview",
+        "title": "Overview",
+        "file": "notes/java/overview.html"
+      },
+      {
+        "id": "java/platform",
+        "title": "Java Platform",
+        "file": "notes/java/platform.html"
+      }
+    ]
+  }
+]
+

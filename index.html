@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal learning and interview preparation notes.">
+    <title>Learning Notes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link href="assets/css/site.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar navbar-dark bg-dark sticky-top shadow-sm">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+          aria-label="Open navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand ms-2 ms-lg-0" href="#/home">Learning Notes</a>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <aside
+          id="sidebar"
+          class="sidebar offcanvas-lg offcanvas-start col-lg-3 col-xl-2 px-0 border-end"
+          tabindex="-1"
+          aria-label="Notes navigation"
+        >
+          <div class="offcanvas-header border-bottom">
+            <h2 class="offcanvas-title h5 mb-0">Learning Notes</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#sidebar"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body d-block p-3">
+            <nav id="notes-navigation" aria-label="Notes"></nav>
+          </div>
+        </aside>
+
+        <main class="col-lg-9 col-xl-10 ms-sm-auto px-md-5">
+          <div class="content-container py-4 py-md-5">
+            <nav aria-label="Breadcrumb">
+              <ol id="breadcrumbs" class="breadcrumb small"></ol>
+            </nav>
+            <article id="note-content" tabindex="-1">
+              <div class="text-body-secondary">Loading notes...</div>
+            </article>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
+

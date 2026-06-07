@@ -1,0 +1,58 @@
+<h1>Writing Notes</h1>
+
+<p>
+  Every note is a small HTML fragment inside the <code>notes</code> directory.
+  The sidebar is generated from <code>navigation.json</code>.
+</p>
+
+<h2>Update an existing page</h2>
+
+<p>
+  Open its HTML file and edit the content. For example, this page lives at
+  <code>notes/writing-notes.html</code>.
+</p>
+
+<h2>Add a page</h2>
+
+<ol>
+  <li>Create an HTML file inside <code>notes</code> or a module subdirectory.</li>
+  <li>Add the page to the appropriate module in <code>navigation.json</code>.</li>
+  <li>Refresh the browser.</li>
+</ol>
+
+<p>A page entry looks like this:</p>
+
+<pre><code>{
+  "id": "java/strings",
+  "title": "Strings",
+  "file": "notes/java/strings.html"
+}</code></pre>
+
+<h2>Add a module</h2>
+
+<p>Add another module object to <code>navigation.json</code>:</p>
+
+<pre><code>{
+  "title": "Databases",
+  "pages": [
+    {
+      "id": "databases/overview",
+      "title": "Overview",
+      "file": "notes/databases/overview.html"
+    }
+  ]
+}</code></pre>
+
+<h2>Useful Bootstrap styles</h2>
+
+<p>
+  Since Bootstrap is already loaded, notes can use components such as alerts,
+  tables, badges, and cards directly.
+</p>
+
+<div class="alert alert-warning" role="note">
+  Keep note files as HTML fragments. Do not include
+  <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, or
+  <code>&lt;body&gt;</code> tags.
+</div>
+
