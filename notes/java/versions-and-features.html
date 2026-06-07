@@ -1,0 +1,249 @@
+<h1>Java Versions &amp; Features</h1>
+
+<p class="lead">
+  An interview-focused guide to the important features available in Java 8,
+  11, 17, 21, and 25.
+</p>
+
+<div class="alert alert-info" role="note">
+  Java ships a feature release every six months. These versions are especially
+  important because most vendors treat them as Long-Term Support (LTS) releases.
+</div>
+
+<h2>Quick comparison</h2>
+
+<div class="table-responsive">
+  <table class="table table-bordered align-middle">
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Released</th>
+        <th>Main developer-facing highlights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Java 8</strong></td>
+        <td>March 2014</td>
+        <td>Lambdas, streams, functional interfaces, default methods, Optional, Date/Time API</td>
+      </tr>
+      <tr>
+        <td><strong>Java 11</strong></td>
+        <td>September 2018</td>
+        <td>Standard HTTP Client, single-file programs, lambda parameter <code>var</code>, new String and Files methods</td>
+      </tr>
+      <tr>
+        <td><strong>Java 17</strong></td>
+        <td>September 2021</td>
+        <td>Sealed classes, stronger JDK encapsulation, enhanced random generators; includes records, text blocks, and pattern matching for <code>instanceof</code></td>
+      </tr>
+      <tr>
+        <td><strong>Java 21</strong></td>
+        <td>September 2023</td>
+        <td>Virtual threads, record patterns, pattern matching for switch, sequenced collections, generational ZGC</td>
+      </tr>
+      <tr>
+        <td><strong>Java 25</strong></td>
+        <td>September 2025</td>
+        <td>Compact source files, flexible constructor bodies, module imports, scoped values, compact object headers</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Java 8</h2>
+
+<p>
+  Java 8 introduced functional-style programming to mainstream Java and remains
+  a common interview baseline.
+</p>
+
+<h3>Lambda expressions and functional interfaces</h3>
+
+<pre><code>List&lt;String&gt; names = Arrays.asList("Asha", "Mohit", "Ravi");
+names.forEach(name -&gt; System.out.println(name));</code></pre>
+
+<ul>
+  <li>A lambda supplies an implementation for a functional interface.</li>
+  <li>A functional interface has exactly one abstract method.</li>
+  <li>Common interfaces include <code>Predicate</code>, <code>Function</code>, <code>Consumer</code>, and <code>Supplier</code>.</li>
+</ul>
+
+<h3>Streams API</h3>
+
+<pre><code>List&lt;String&gt; longNames = names.stream()
+    .filter(name -&gt; name.length() &gt; 4)
+    .map(String::toUpperCase)
+    .collect(Collectors.toList());</code></pre>
+
+<p>
+  Streams describe a pipeline of operations. Intermediate operations such as
+  <code>filter</code> and <code>map</code> are lazy; a terminal operation such as
+  <code>collect</code> or <code>forEach</code> starts processing.
+</p>
+
+<h3>Other important additions</h3>
+
+<ul>
+  <li>Method references, such as <code>System.out::println</code>.</li>
+  <li>Default and static methods in interfaces.</li>
+  <li><code>Optional</code> for explicitly representing a possibly absent value.</li>
+  <li>The modern <code>java.time</code> Date and Time API.</li>
+  <li>CompletableFuture and concurrency improvements.</li>
+  <li>Metaspace replaced the Permanent Generation.</li>
+</ul>
+
+<h2>Java 11</h2>
+
+<p>
+  Java 11 was the first widely adopted LTS release after Java 8. It also reflects
+  major platform changes introduced in Java 9 and 10, including modules and local
+  variable type inference.
+</p>
+
+<h3>Features introduced in Java 11</h3>
+
+<ul>
+  <li>The HTTP Client became a standard API with synchronous and asynchronous requests.</li>
+  <li>Run a single source file directly with <code>java Hello.java</code>.</li>
+  <li>Use <code>var</code> in lambda parameters, mainly to allow annotations.</li>
+  <li>Java Flight Recorder became available as an open-source profiling tool.</li>
+  <li>TLS 1.3 support and the experimental Z Garbage Collector were added.</li>
+  <li>Java EE and CORBA modules were removed from the JDK.</li>
+</ul>
+
+<h3>Convenient APIs</h3>
+
+<pre><code>"  ".isBlank();
+"one\ntwo".lines();
+"ha".repeat(3);
+" text ".strip();
+
+String content = Files.readString(path);
+Files.writeString(path, content);</code></pre>
+
+<h2>Java 17</h2>
+
+<p>
+  Java 17 completed several language features developed between Java 11 and 17.
+  It is a popular modern baseline for production applications.
+</p>
+
+<h3>Features introduced in Java 17</h3>
+
+<ul>
+  <li>Sealed classes restrict which classes may extend or implement a type.</li>
+  <li>Enhanced pseudo-random number generator APIs.</li>
+  <li>Strong encapsulation of JDK internals.</li>
+  <li>Pattern matching for <code>switch</code> entered preview.</li>
+</ul>
+
+<pre><code>sealed interface Shape permits Circle, Rectangle {}
+
+final class Circle implements Shape {}
+final class Rectangle implements Shape {}</code></pre>
+
+<h3>Important features available by Java 17</h3>
+
+<ul>
+  <li>Records for concise immutable data carriers, finalized in Java 16.</li>
+  <li>Pattern matching for <code>instanceof</code>, finalized in Java 16.</li>
+  <li>Text blocks for multiline strings, finalized in Java 15.</li>
+  <li>Helpful NullPointerException messages.</li>
+  <li>Switch expressions.</li>
+</ul>
+
+<pre><code>record User(long id, String name) {}
+
+if (value instanceof String text) {
+    System.out.println(text.toUpperCase());
+}</code></pre>
+
+<h2>Java 21</h2>
+
+<p>
+  Java 21's headline feature is virtual threads, which make thread-per-request
+  server code practical at much larger scales.
+</p>
+
+<h3>Virtual threads</h3>
+
+<pre><code>try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+    executor.submit(() -&gt; callRemoteService());
+}</code></pre>
+
+<p>
+  Virtual threads are lightweight threads managed by the JVM. They improve
+  scalability for workloads that spend significant time blocked on I/O. They do
+  not make CPU-bound work inherently faster.
+</p>
+
+<h3>Other important additions</h3>
+
+<ul>
+  <li>Pattern matching for <code>switch</code> became final.</li>
+  <li>Record patterns enable destructuring record values.</li>
+  <li>Sequenced collections provide consistent first, last, and reversed operations.</li>
+  <li>Generational ZGC improves low-latency garbage collection.</li>
+  <li>String templates, scoped values, and structured concurrency were preview features.</li>
+</ul>
+
+<pre><code>static String describe(Object value) {
+    return switch (value) {
+        case Integer number -&gt; "integer: " + number;
+        case String text    -&gt; "text: " + text;
+        case null           -&gt; "null";
+        default             -&gt; "other";
+    };
+}</code></pre>
+
+<h2>Java 25</h2>
+
+<p>
+  Java 25 reached general availability on September 16, 2025. It continues work
+  on simpler Java programs, performance, observability, and structured concurrency.
+</p>
+
+<h3>Language and library additions</h3>
+
+<ul>
+  <li>Compact source files and instance main methods simplify small programs.</li>
+  <li>Flexible constructor bodies allow validation and preparation before calling <code>super(...)</code>.</li>
+  <li>Module import declarations make all exported packages of a module available with one declaration.</li>
+  <li>Scoped values became final for safely sharing immutable data with callees and child threads.</li>
+  <li>A Key Derivation Function API was added.</li>
+</ul>
+
+<pre><code>void main() {
+    IO.println("Hello, Java 25!");
+}</code></pre>
+
+<h3>JVM and tooling additions</h3>
+
+<ul>
+  <li>Compact object headers reduce object memory overhead.</li>
+  <li>Generational Shenandoah provides another low-pause garbage collection option.</li>
+  <li>Ahead-of-time method profiling and command-line ergonomics improve startup work.</li>
+  <li>Java Flight Recorder gained cooperative sampling, method timing, tracing, and experimental CPU-time profiling.</li>
+  <li>Structured concurrency remained a preview feature.</li>
+</ul>
+
+<h2>Interview takeaways</h2>
+
+<ul>
+  <li><strong>Java 8:</strong> know lambdas, streams, functional interfaces, Optional, and <code>java.time</code>.</li>
+  <li><strong>Java 11:</strong> know the HTTP Client, single-file execution, useful String methods, and migration removals.</li>
+  <li><strong>Java 17:</strong> know records, sealed classes, pattern matching, text blocks, and stronger encapsulation.</li>
+  <li><strong>Java 21:</strong> understand virtual threads and pattern matching for switch.</li>
+  <li><strong>Java 25:</strong> recognize simplified source files, scoped values, and the latest JVM improvements.</li>
+</ul>
+
+<h2>Official references</h2>
+
+<ul>
+  <li><a href="https://openjdk.org/projects/jdk8/features">OpenJDK 8 features</a></li>
+  <li><a href="https://openjdk.org/projects/jdk/11/">OpenJDK 11</a></li>
+  <li><a href="https://openjdk.org/projects/jdk/17/">OpenJDK 17</a></li>
+  <li><a href="https://openjdk.org/projects/jdk/21/">OpenJDK 21</a></li>
+  <li><a href="https://openjdk.org/projects/jdk/25/">OpenJDK 25</a></li>
+</ul>

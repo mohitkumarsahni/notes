@@ -26,8 +26,12 @@
         "id": "java/platform",
         "title": "Java Platform",
         "file": "notes/java/platform.html"
+      },
+      {
+        "id": "java/versions-and-features",
+        "title": "Java Versions & Features",
+        "file": "notes/java/versions-and-features.html"
       }
     ]
   }
 ]
-
